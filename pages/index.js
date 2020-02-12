@@ -3,5 +3,5 @@ export default function Index() {
         <div>
         <p>Hello Next.js</p>
     </div>
-);
+)
 }

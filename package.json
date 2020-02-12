@@ -6,21 +6,34 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
+    "@types/express": "^4.17.2",
+    "@types/node": "^13.7.1",
+    "awilix": "^4.2.3",
+    "awilix-express": "^3.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "migrate-mongo": "^7.0.1",
     "mongoose": "^5.8.11",
     "next": "^9.2.1",
     "nodemon": "^2.0.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   },
   "scripts": {
-    "nodemon": "nodemon server/server.js",
-    "dev": "node server/server.js",
+    "nodemon": "nodemon server/server.ts",
+    "dev": "node --experimental-modules server/server.ts",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-typescript": "^7.8.3",
+    "@types/react": "^16.9.19"
   }
 }

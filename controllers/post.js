@@ -2,7 +2,8 @@ const Post = require('../models/post-model')
 
 createPost = (req, res) => {
     const body = req.body
-console.log(req.body)
+    console.log(req.body);
+
     if (!body) {
         return res.status(400).json({
             success: false,
@@ -12,25 +13,11 @@ console.log(req.body)
 
     const post = new Post(body)
 
-    if (!movie) {
+    if (!post) {
         return res.status(400).json({ success: false, error: err })
     }
+    post.save()
 
-    post
-        .save()
-        .then(() => {
-            return res.status(201).json({
-                success: true,
-                id: movie._id,
-                message: 'Post created!',
-            })
-        })
-        .catch(error => {
-            return res.status(400).json({
-                error,
-                message: 'Post not created!',
-            })
-        })
 }
 
 updatePost = async (req, res) => {
